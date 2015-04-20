@@ -27,13 +27,13 @@ int main(void)
 	int i, marker;
 	char ch;
 	FILE *fp;
-	
-	printf("Pre-Allocation Test");
+//****************THIS IS WHERE THE ERROR OCCURS*****************************************************
+	printf("Pre-Allocation Test"); //When I run it on cmd, itll print this line, and then freeze, so I'm not sure how malloc is failing, because it doenst even output NULL
 	struct Word_setup *phrase;
 	phrase = (struct Word_setup *) malloc(SIZE); //For some reason the compiler thinks that this syntax is incorrect. Try it on a different computer possibly.
 	if (phrase == NULL)
 		{printf("Failure allocating memory"); return 0;}
-
+//****************THIS IS THE ERROR END*************************************************************
 	fp = fopen("C:\\Users\\Nicolas\\Desktop\\UF\\Semester 2\\COP 3275\\Projects\\Project 4\\input.txt", "r"); //Edit to the location of the file
 
 	marker = 0;
